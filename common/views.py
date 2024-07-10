@@ -964,9 +964,10 @@ class PasswordResetView(APIView):
         # Generate a token for this user
         token = str(random.randint(100000, 999999))
         print(token)
+        print(user.id)
 
 
-        password_reset_url = f"http://localhost:3000/reset-password/{user.id}/{token}/"
+        password_reset_url = f"http://localhost:3000/forgot/{user.id}/{token}/"
 
         print(password_reset_url)
 
@@ -1009,6 +1010,8 @@ class PasswordResetConfirmView(APIView):
     def put(self, request, user_id, token):
         
         data = request.data
+        print(user_id)
+        print(token)
 
         try:
             user = User.objects.get(id=user_id, isClose=False)

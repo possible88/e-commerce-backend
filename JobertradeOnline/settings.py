@@ -146,6 +146,12 @@ AUTH_USER_MODEL  = 'core.User'
 
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Adjust this to your Next.js frontend URL
+    "http://127.0.0.1:3000",  # if needed, also allow localhost by IP
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
