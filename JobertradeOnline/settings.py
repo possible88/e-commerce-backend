@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mh8js&s%n26nxcb)!km5!qc-ew-lmn!-gj_%ps!-(!6()8%!du
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','Possible88.pythonanywhere.com', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 APPEND_SLASH = False
 
@@ -146,15 +146,11 @@ AUTH_USER_MODEL  = 'core.User'
 
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Adjust this to your Next.js frontend URL
+    "http://127.0.0.1:3000",  # if needed, also allow localhost by IP
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'live.smtp.mailtrap.io'
-EMAIL_PORT = 587  # Use 465 for SSL connection
-EMAIL_USE_TLS = True  # Use TLS encryption
-EMAIL_USE_SSL = False  # Use SSL encryption
-EMAIL_HOST_USER = 'api'  # Your email address
-EMAIL_HOST_PASSWORD = '8600407c964c711e9be61e97d22d5944'  # Your password or an app-specific password
-
-# Add the following settings to specify the sender
-DEFAULT_FROM_EMAIL = 'mailtrap@leadcommercialservices.com'
